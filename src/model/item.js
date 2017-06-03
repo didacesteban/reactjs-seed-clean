@@ -1,5 +1,5 @@
 /**
- * @description item model
+ * @description Item model
  * @class Item
  */
 module.exports = class Item
