@@ -7,7 +7,7 @@ const FetchItemsListUseCase = require('./usecases/fetchitems');
 
 module.exports = class ServiceLocator
 {
-  static provideRoot (config) {
+  static provideRoot () {
     const fetchItemsListUseCase = new FetchItemsListUseCase(new ItemRepository());
     const listView = ReactDOM.render(
       <App />,

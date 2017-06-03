@@ -2,8 +2,8 @@ const ItemMapper = require('./item.mapper');
 const request = require('superagent');
 
 /**
- * @description Everything related to get all nested objects
- * @class OptionRepository
+ * @description Everything related to Item model
+ * @class ItemRepository
  */
 module.exports = class ItemRepository
 {
@@ -11,8 +11,7 @@ module.exports = class ItemRepository
     request
     .get('https://jsonplaceholder.typicode.com/posts')
     .end((err, res) => {
-      if (err) { return callback(err); }
-      callback(err, res.body.map(ItemMapper.parseFromJSON));
+      err ? callback(err) : callback(err, res.body.map(ItemMapper.parseFromJSON));
     });
   }
 }
